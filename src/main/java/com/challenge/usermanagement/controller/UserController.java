@@ -24,6 +24,10 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.PUT, consumes = "application/json")
 	public ResponseEntity<Long> saveUser(@RequestBody User user) {
 		long userId = userService.saveUser(user);
